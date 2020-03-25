@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 import styles from './styles.json';
 
 // Pass a list of class names separated by a space, for example:
@@ -10,7 +11,15 @@ export default function tailwind(classNames) {
 		return obj;
 	}
 
-	for (const className of classNames.split(' ')) {
+	for (let className of classNames.split(' ')) {
+		if (className.startsWith('web:')) {
+			if (Platform.OS !== 'web') {
+				continue;
+			}
+
+			className = className.slice(4);
+		}
+
 		if (styles[className]) {
 			Object.assign(obj, styles[className]);
 		} else {
