@@ -15,7 +15,7 @@
 	"scripts": {
 		"build": "node build",
 		"prepare": "npm run build",
-		"test": "xo && ava"
+		"test": "xo && jest"
 	},
 	"files": [
 		"index.js",
@@ -27,22 +27,15 @@
 		"react-native"
 	],
 	"devDependencies": {
-		"@ava/babel": "^1.0.1",
-		"@babel/core": "^7.9.0",
-		"@babel/preset-env": "^7.9.0",
-		"@babel/register": "^7.9.0",
-		"ava": "^3.5.1",
+		"babel-cli": "^6.26.0",
 		"css": "^2.2.4",
 		"css-to-react-native": "^3.0.0",
+		"jest": "^25.1.0",
+		"metro-react-native-babel-preset": "^0.59.0",
 		"prettier": "^2.0.2",
+		"react-native": "^0.61.5",
 		"tailwindcss": "^1.2.0",
 		"xo": "^0.28.0"
-	},
-	"ava": {
-		"babel": true,
-		"require": [
-			"@babel/register"
-		]
 	},
 	"prettier": {
 		"useTabs": true,
@@ -53,5 +46,8 @@
 		"rules": {
 			"unicorn/prevent-abbreviations": "off"
 		}
+	},
+	"jest": {
+		"preset": "react-native"
 	}
 }
