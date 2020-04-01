@@ -47,6 +47,7 @@ const supportedUtilities = [
 	// Position
 	'absolute',
 	'relative',
+	'fixed',
 	// Top, right, bottom, left
 	/^(inset-0|inset-x-0|inset-y-0)/,
 	/^(top|bottom|left|right)-0$/,
@@ -57,11 +58,11 @@ const supportedUtilities = [
 	// Margin
 	/^-?(m.?-\d+|m.?-px)/,
 	// Width
-	/^w-(\d|\/)+|^w-px|^w-full/,
+	/^(w-\d+|w-px|w-full|^w-screen)/,
 	// Height
-	/^(h-\d+|h-px|h-full)/,
+	/^(h-\d+|h-px|h-full|^h-screen)/,
 	// Min/Max width/height
-	/^(min-w-|max-w-|min-h-0|min-h-full|max-h-full)/,
+	/^(min-w-|max-w-|min-h-0|min-h-full|max-h-full|min-h-screen|max-h-screen)/,
 	// Font size
 	/^text-/,
 	// Font style
